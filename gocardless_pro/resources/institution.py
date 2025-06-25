@@ -37,6 +37,11 @@ class Institution(object):
   
 
     @property
+    def limits(self):
+        return self.Limits(self.attributes.get('limits'))
+  
+
+    @property
     def logo_url(self):
         return self.attributes.get('logo_url')
   
@@ -46,11 +51,35 @@ class Institution(object):
         return self.attributes.get('name')
   
 
+    @property
+    def status(self):
+        return self.attributes.get('status')
+  
+
 
   
 
   
 
+  
+
+  
+
+  
+    class Limits(object):
+        """Wrapper for the response's 'limits' attribute."""
+
+        def __init__(self, attributes):
+            self.attributes = attributes
+    
+        @property
+        def daily(self):
+            return self.attributes.get('daily')
+    
+        @property
+        def single(self):
+            return self.attributes.get('single')
+    
   
 
   

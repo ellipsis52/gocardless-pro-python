@@ -8,7 +8,7 @@ A Python client for interacting with the GoCardless Pro API.
 
 |pypi-badge|
 
-Tested against Python 3.8, 3.9, 3.10 and 3.11.
+Tested against Python 3.8, 3.9, 3.10, 3.11 and 3.12.
 
 - `"Getting Started" guide <https://developer.gocardless.com/getting-started/api/introduction/?lang=python>`_ with copy and paste Python code samples
 - `API reference`_
@@ -75,6 +75,25 @@ For full documentation, see our `API reference`_.
 
 Available resources
 ```````````````````
+
+Balances
+''''''''''''''''''''''''''''''''''''''''''
+
+.. code:: python
+
+    # List balances
+    client.balances.list(params={...})
+
+    # Iterate through all balances
+    client.balances.all(params={...})
+
+Bank account details
+''''''''''''''''''''''''''''''''''''''''''
+
+.. code:: python
+
+    # Get encrypted bank details
+    client.bank_account_details.get('BA123', params={...})
 
 Bank authorisations
 ''''''''''''''''''''''''''''''''''''''''''
@@ -169,6 +188,14 @@ Billing request templates
 
     # Update a Billing Request Template
     client.billing_request_templates.update('BRQ123', params={...})
+
+Billing request with actions
+''''''''''''''''''''''''''''''''''''''''''
+
+.. code:: python
+
+    # Create a Billing Request with Actions
+    client.billing_request_with_actions.create_with_actions(params={...})
 
 Blocks
 ''''''''''''''''''''''''''''''''''''''''''
@@ -453,8 +480,34 @@ Negative balance limits
     # Iterate through all negative_balance_limits
     client.negative_balance_limits.all(params={...})
 
-    # Create a negative balance limit
-    client.negative_balance_limits.create(params={...})
+Outbound payments
+''''''''''''''''''''''''''''''''''''''''''
+
+.. code:: python
+
+    # Create an outbound payment
+    client.outbound_payments.create(params={...})
+
+    # Create a withdrawal outbound payment
+    client.outbound_payments.withdraw(params={...})
+
+    # Cancel an outbound payment
+    client.outbound_payments.cancel('OUT01JR7P5PKW3K7Q34CJAWC03E82', params={...})
+
+    # Approve an outbound payment
+    client.outbound_payments.approve('OUT01JR7P5PKW3K7Q34CJAWC03E82', params={...})
+
+    # Get an outbound payment
+    client.outbound_payments.get('OUT01JR7P5PKW3K7Q34CJAWC03E82', params={...})
+
+    # List outbound payments
+    client.outbound_payments.list(params={...})
+
+    # Iterate through all outbound_payments
+    client.outbound_payments.all(params={...})
+
+    # Update an outbound payment
+    client.outbound_payments.update('OUT01JR7P5PKW3K7Q34CJAWC03E82', params={...})
 
 Payer authorisations
 ''''''''''''''''''''''''''''''''''''''''''

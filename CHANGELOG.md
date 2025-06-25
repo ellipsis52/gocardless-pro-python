@@ -1,4 +1,25 @@
 <!-- @format -->
+
+# 3.1.0
+- Added `mandate_request_constraints` to Billing Request templates
+- `constraints[max_amount_per_payment]` is required for Billing Requests Creation, if they contain PayTo `mandate_request`
+
+# 2.5.0
+- Add endpoints for route `/outbound_payments`
+
+# 2.4.0
+
+- Added new field called "status" to GET /billing_requests/<billing_request_id>/institutions endpoint
+
+# 2.3.0
+
+- Added new endpoint `/balance` that the balances for a creditor
+
+# 2.2.0
+
+- Added `status` filter parameter to Mandate Import Entries.
+- Added `processing_errors` response field to Mandate Import Entry.
+
 # 2.1.0
 
 - Added `mandate_request[consent_type]` parameter to Billing Request creation.

@@ -38,6 +38,14 @@ class Client(object):
         self._raise_on_idempotency_conflict = raise_on_idempotency_conflict
 
     @property
+    def balances(self):
+        return services.BalancesService(self._api_client, 3, 0.5, self._raise_on_idempotency_conflict)
+
+    @property
+    def bank_account_details(self):
+        return services.BankAccountDetailsService(self._api_client, 3, 0.5, self._raise_on_idempotency_conflict)
+
+    @property
     def bank_authorisations(self):
         return services.BankAuthorisationsService(self._api_client, 3, 0.5, self._raise_on_idempotency_conflict)
 
@@ -56,6 +64,10 @@ class Client(object):
     @property
     def billing_request_templates(self):
         return services.BillingRequestTemplatesService(self._api_client, 3, 0.5, self._raise_on_idempotency_conflict)
+
+    @property
+    def billing_request_with_actions(self):
+        return services.BillingRequestWithActionsService(self._api_client, 3, 0.5, self._raise_on_idempotency_conflict)
 
     @property
     def blocks(self):
@@ -124,6 +136,10 @@ class Client(object):
     @property
     def negative_balance_limits(self):
         return services.NegativeBalanceLimitsService(self._api_client, 3, 0.5, self._raise_on_idempotency_conflict)
+
+    @property
+    def outbound_payments(self):
+        return services.OutboundPaymentsService(self._api_client, 3, 0.5, self._raise_on_idempotency_conflict)
 
     @property
     def payer_authorisations(self):

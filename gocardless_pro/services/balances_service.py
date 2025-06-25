@@ -8,28 +8,29 @@ from .. import resources
 from ..paginator import Paginator
 from .. import errors
 
-class NegativeBalanceLimitsService(base_service.BaseService):
-    """Service class that provides access to the negative_balance_limits
+class BalancesService(base_service.BaseService):
+    """Service class that provides access to the balances
     endpoints of the GoCardless Pro API.
     """
 
-    RESOURCE_CLASS = resources.NegativeBalanceLimit
-    RESOURCE_NAME = 'negative_balance_limits'
+    RESOURCE_CLASS = resources.Balance
+    RESOURCE_NAME = 'balances'
 
 
     def list(self,params=None, headers=None):
-        """List negative balance limits.
+        """List balances.
 
         Returns a [cursor-paginated](#api-usage-cursor-pagination) list of
-        negative balance limits.
+        balances for a given creditor. This endpoint is rate limited to 60
+        requests per minute.
 
         Args:
               params (dict, optional): Query string parameters.
 
         Returns:
-              ListResponse of NegativeBalanceLimit instances
+              ListResponse of Balance instances
         """
-        path = '/negative_balance_limits'
+        path = '/balances'
         
 
         response = self._perform_request('GET', path, params, headers,

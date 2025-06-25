@@ -3,11 +3,14 @@
 #   https://github.com/gocardless/crank
 #
 
+from .balances_service import BalancesService
+from .bank_account_details_service import BankAccountDetailsService
 from .bank_authorisations_service import BankAuthorisationsService
 from .bank_details_lookups_service import BankDetailsLookupsService
 from .billing_requests_service import BillingRequestsService
 from .billing_request_flows_service import BillingRequestFlowsService
 from .billing_request_templates_service import BillingRequestTemplatesService
+from .billing_request_with_actions_service import BillingRequestWithActionsService
 from .blocks_service import BlocksService
 from .creditors_service import CreditorsService
 from .creditor_bank_accounts_service import CreditorBankAccountsService
@@ -25,6 +28,7 @@ from .mandate_imports_service import MandateImportsService
 from .mandate_import_entries_service import MandateImportEntriesService
 from .mandate_pdfs_service import MandatePdfsService
 from .negative_balance_limits_service import NegativeBalanceLimitsService
+from .outbound_payments_service import OutboundPaymentsService
 from .payer_authorisations_service import PayerAuthorisationsService
 from .payer_themes_service import PayerThemesService
 from .payments_service import PaymentsService

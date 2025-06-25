@@ -113,8 +113,12 @@ class BillingRequest(object):
             return self.attributes.get('currency')
     
         @property
-        def instalments(self):
-            return self.attributes.get('instalments')
+        def instalments_with_dates(self):
+            return self.attributes.get('instalments_with_dates')
+    
+        @property
+        def instalments_with_schedule(self):
+            return self.attributes.get('instalments_with_schedule')
     
         @property
         def links(self):
@@ -253,6 +257,10 @@ class BillingRequest(object):
         @property
         def scheme(self):
             return self.attributes.get('scheme')
+    
+        @property
+        def sweeping(self):
+            return self.attributes.get('sweeping')
     
         @property
         def verify(self):

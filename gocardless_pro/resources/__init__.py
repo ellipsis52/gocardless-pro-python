@@ -3,6 +3,10 @@
 #   https://github.com/gocardless/crank
 #
 
+from .balance import Balance
+
+from .bank_account_detail import BankAccountDetail
+
 from .bank_authorisation import BankAuthorisation
 
 from .bank_details_lookup import BankDetailsLookup
@@ -12,6 +16,8 @@ from .billing_request import BillingRequest
 from .billing_request_flow import BillingRequestFlow
 
 from .billing_request_template import BillingRequestTemplate
+
+from .billing_request_with_action import BillingRequestWithAction
 
 from .block import Block
 
@@ -46,6 +52,8 @@ from .mandate_import_entry import MandateImportEntry
 from .mandate_pdf import MandatePdf
 
 from .negative_balance_limit import NegativeBalanceLimit
+
+from .outbound_payment import OutboundPayment
 
 from .payer_authorisation import PayerAuthorisation
 
